@@ -2,12 +2,37 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
     <title>@ViewBag.Title</title>
+
+  
+    <link rel="stylesheet" href="~/dist/fullpage.css" />
+    <link rel="stylesheet" href="~/Content/site.css" />
+
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    
+        
+            <div id="fullpage">
+                @RenderBody()
+            </div>
+       
+
+   
+    <script src="~/lib/jquery/jquery.js"></script>
+    
+    <script type="text/javascript" src="~/dist/fullpage.js"></script>
+    <script type="text/javascript" src="~/dist/examples.js"></script>
+
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff']
+        });
+    </script>
+
 </body>
+
+
 </html>

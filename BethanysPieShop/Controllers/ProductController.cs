@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BethanysPieShop.Models.ViewModels;
 using BethanysPieShop.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,7 +24,10 @@ namespace BethanysPieShop.Controllers
         }
         public ViewResult List()
         {
-            return View(_productRepository.Allproducts);
+            var productViewModels = new ProductListViewModel();
+            productViewModels.ProductsList = _productRepository.Allproducts;
+            productViewModels.CurrentCategory = "Fruit Pie";
+            return View(productViewModels);
         }
     }
 }
