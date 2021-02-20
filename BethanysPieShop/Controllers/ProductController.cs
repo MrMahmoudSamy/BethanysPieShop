@@ -29,5 +29,12 @@ namespace BethanysPieShop.Controllers
             productViewModels.CurrentCategory = "Fruit Pie";
             return View(productViewModels);
         }
+        public IActionResult Details(int id)
+        {
+            var product = _productRepository.GetProductById(id);
+            if (product == null)
+                return NotFound();
+            return View(product);
+        }
     }
 }
